@@ -38,7 +38,27 @@ class Connection
     }
     
     private function handshake($data)
-    {	
+    {
+        if($this->waitingForData === true)
+        {
+            $data = $this->_dataBuffer . $data;
+            $this->_dataBuffer = '';
+            $this->waitingForData = false;
+        }
+
+
+        if(preg_match("/\r\n\r\n/", $data) == 0)
+        {
+            $this->waitingForData = true;
+            $this->_dataBuffer .= $data;
+            return false;
+        }
+        else
+        {
+            $this->_dataBuffer = '';
+            $this->waitingForData = false;
+        }
+
         $this->log('Performing handshake');	    
         $lines = preg_split("/\r\n/", $data);
 		
