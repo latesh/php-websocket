@@ -4,11 +4,7 @@
 	"keywords": ["php", "websocket"],
 	"autoload": {
 		"classmap": [
-			"server/lib/SplClassLoader.php",
-			"server/lib/WebSocket/Connection.php",
-			"server/lib/WebSocket/Server.php",
-			"server/lib/WebSocket/Socket.php",
-			"server/lib/WebSocket/Application/Application.php"
+			"server/lib/SplClassLoader.php"
 		]
 	},
 	"require": {
