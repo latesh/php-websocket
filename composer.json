@@ -1,0 +1,18 @@
+{
+	"name": "latesh/php-websocket",
+	"description": "PHP WebSocket library",
+	"keywords": ["php", "websocket"],
+	"autoload": {
+		"classmap": [
+			"server/lib/SplClassLoader.php",
+			"server/lib/WebSocket/Connection.php",
+			"server/lib/WebSocket/Server.php",
+			"server/lib/WebSocket/Socket.php",
+			"server/lib/WebSocket/Application/Application.php"
+		]
+	},
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"minimum-stability": "dev"
+}
